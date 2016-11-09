@@ -17,7 +17,17 @@ function updateMessageFile() {
 
     for (let i = 0; i < sources.length; i++) {
     	for (let n = 0; n < sources[i].notifications.length; n++) {
-            let data = "" + sources[i].notifications[n].title + "\n";
+    	    let notif = sources[i].notifications[n];
+    	    let urg = "" + notif.urgency;
+    	    if (notif.urgency == 0) {
+    	        urg = "L"
+    	    } else if (notif.urgency == 1) {
+    	    	urg = "N"
+    	    } else if (notif.urgency == 3) {
+    	    	urg = "C"
+    	    }
+            let data = urg + " " + notif.title + " — " + notif.bannerBodyText;
+            data = data.replace("\\", "\\\\").replace("\n", "\\n") + "\n"
             fstream.write(data, null, data.length);
     	}
     }
