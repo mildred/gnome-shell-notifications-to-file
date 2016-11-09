@@ -1,6 +1,6 @@
 {
   "name": "Notifications to file",
-  "shell-version": ["3.22.1"],
+  "shell-version": ["3.20.4", "3.22.1"],
   "uuid": "notifications_to_file@11.2016.mildred.fr",
   "description": "Push desktop notification to a file $XDG_RUNTIME_DIR/notifications so it can be read by other tools"
 }
